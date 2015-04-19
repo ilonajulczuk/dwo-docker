@@ -65,7 +65,7 @@ $ docker run -it ubuntu bash
 
 ls, etc
 
-## montowanie wolumenów, forwardowanie portów, uruchamianie kontenerów w trybie zdemonizowanym
+## Montowanie wolumenów, forwardowanie portów, uruchamianie kontenerów w trybie zdemonizowanym
 
 
 ````
@@ -125,8 +125,12 @@ CMD python app.py
 $ docker build -t attero/dwo-docker .
 ```
 
-## moja pierwsza aplikacja w Dockerowym kontenerze.
+## Pierwsza aplikacja w Dockerowym kontenerze - linki.
 
 Aplikacja wymaga do prawidłowego działania redisa. Połączymy redisa z naszym kontenerem za pomocą linków:
 
 https://docs.docker.com/userguide/dockerlinks/
+
+```
+$ docker run -it -p 5000:5000 -v `pwd`:/code --link redis:redis attero/dwo-docker
+```
