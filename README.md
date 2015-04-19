@@ -1,10 +1,10 @@
 # DWO - docker workshops
 
-0. wstęp o co chodzi z dockerem.
+## Wstęp o co chodzi z dockerem.
 
 Docker to technologia kontenerowa, zestaw narzędzi do tworzenia, dzielenia i uruchamiania kontenerów.
 
-0.1 - Co to jest kontener?
+## Co to jest kontener?
 
 Kontener:
 kawałek systemu, który jest odizolowany od reszty i można mu ograniczyć przywileje
@@ -28,7 +28,7 @@ Używając Docker CLI
 $ docker --help
 ```
 
-Ściąganie obrazu z internetu
+## Ściąganie obrazu z internetu
 
 Żeby uruchomić kontener musimy mieć obraz na podstawie którego będziemy tworzyć kontener.
 
@@ -50,14 +50,14 @@ Jak zobaczyć jakie mamy obrazy dockerowe?
 $ docker images
 ```
 
-2. Prosta komenda w kontenerze
+## Prosta komenda w kontenerze
 Jak uruchomić coś w kontenerze?
 
 ```
 $ docker run busybox echo “hello docker”
 ```
 
-3. Komenda Run
+## Komenda Run
 
 ```
 $ docker run -it ubuntu bash
@@ -65,7 +65,7 @@ $ docker run -it ubuntu bash
 
 ls, etc
 
-4. montowanie wolumenów, forwardowanie portów, uruchamianie kontenerów w trybie zdemonizowanym
+## montowanie wolumenów, forwardowanie portów, uruchamianie kontenerów w trybie zdemonizowanym
 
 
 ````
@@ -85,10 +85,14 @@ Forwardowanie portów na podstawie obrazu python:3.4
 $ python3 -m http.server
 ```
 
-5. utrwalanie kontenerów na podstawie commitowania kontenera
+## Utrwalanie kontenerów na podstawie commitowania kontenera
+
+```
+$ docker commit container_name my-org/new_name
+```
 
 
-6. wstęp do Dockerfile'a (specyfikacji budowy obrazów dockerowych)
+## Wstęp do Dockerfile'a (specyfikacji budowy obrazów dockerowych)
 
 Przykład: Flask app - zbudujemy dla niej Dockerfile.
 
@@ -121,7 +125,7 @@ CMD python app.py
 $ docker build -t attero/dwo-docker .
 ```
 
-7. moja pierwsza aplikacja w Dockerowym kontenerze.
+## moja pierwsza aplikacja w Dockerowym kontenerze.
 
 Aplikacja wymaga do prawidłowego działania redisa. Połączymy redisa z naszym kontenerem za pomocą linków:
 
